@@ -1,5 +1,9 @@
-let titulo = document.querySelector("h1");
-titulo.innerHTML = "Juego del número secreto";
+function asignarTextoElemento(elemento, texto) {
+  let elementoHTML = document.querySelector(elemento);
+  elementoHTML.innerHTML = texto;
+}
 
-let parrafo = document.querySelector("p");
-parrafo.innerHTML = "Indicar un número entre 1 y 10";
+function intentoDeUsuario() {}
+
+asignarTextoElemento("h1", "Juego del número secreto");
+asignarTextoElemento("p", "Indicar un número entre 1 y 100");
