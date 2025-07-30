@@ -14,12 +14,21 @@ function verificarIntento() {
       "p",
       `Acertaste el número en ${intentos} ${intentos === 1 ? "vez" : "veces"}.`
     );
-  } else if (numeroDeUsuario > numeroSecreto) {
-    asignarTextoElemento("p", "El número secreto es menor.");
+    document.getElementById("reiniciar").removeAttribute("disabled");
   } else {
-    asignarTextoElemento("p", "El número secreto es mayor.");
+    if (numeroDeUsuario > numeroSecreto) {
+      asignarTextoElemento("p", "El número secreto es menor.");
+    } else {
+      asignarTextoElemento("p", "El número secreto es mayor.");
+    }
+    intentos++;
+    limpiarCaja();
   }
-  intentos++;
+  return;
+}
+
+function limpiarCaja() {
+  document.querySelector("#valorUsuario").value = "";
 }
 
 function generarNumeroSecreto() {
